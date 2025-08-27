@@ -1,0 +1,28 @@
+1. Escolha uma ferramenta de GCS. Para esta ferramenta:
+GCS escolhida: GitHub
+
+2. Descreva como colocar um artefato sob gerenciamento
+de configuração e então faça-o com algum artefato seu.
+Primeiramente, deve-se criar um repositório (público ou privado), depois, adicionar o(s) arquivo(s) utilizando comandos, tais como: git init, git add e git commit. Por último tem que ser feito o push, comando para enviar o(s) arquivo(s) para o repositório.
+
+3. Descreva como é feita a autorização de um check-out.
+No Git/GitHub, check-out é feito ao alterar ou baixar uma versão do arquivo.
+A autorização é feita de duas formas, sendo elas, localmente, quando qualquer usuário pode modificar os arquivos ou de forma remota, quando é feita somente por pessoas autorizadas.
+
+
+4. Faça o check-out de seu artefato e descreva o que a
+ferramenta registra ao fazê-lo.
+No GitHub, a ferramenta registra o commit feito e o histórico de quem fez tal alteração.
+
+
+5. Diga se a ferramenta bloqueia a edição de um certo
+documento por mais de uma pessoa ao mesmo tempo.
+O Git/GitHub não bloqueia a edição simultânea, ou seja, várias pessoas podem editar o mesmo arquivo ao mesmo tempo, o que pode acarretar em diversos problemas, como, perda de tempo e conflito entre arquivos.
+
+6. Faça o check-in de seu artefato e descreva o que a
+ferramenta registra ao fazê-lo.
+No Git, o check-in é feito com git commit quando feito localmente e git push quando é feito de forma remota, e registra dados como o conteúdo atualizado, autor do commit, data e hora e a mensagem de commit.
+
+
+7. Descreva como é feita a auditoria de configuração
+No GitHub, a auditoria é feita através do histórico de commits, que guarda: quem fez a alteração, quando foi feita, o que mudou e qual branch recebeu a atualização.
