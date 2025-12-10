@@ -181,6 +181,129 @@ a{
 .btn-outline svg {
     color: #6B7280;
 }
+ /* Card Fidelidade */
+        .loyalty-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            text-align: center;
+            background-color: rgba(255,255,255,0.15);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+        }
+
+        .loyalty-stars {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        .star-filled { color: #FFD700; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .star-empty { color: rgba(255,255,255,0.4); }
+
+        .loyalty-info {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 12px;
+            background-color: rgba(255,255,255,0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 70%; /* Exemplo: 70% preenchido */
+            background: linear-gradient(90deg, #A7F3D0, #34D399);
+            border-radius: 20px;
+        }
+
+        .loyalty-footer {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+
+        /* Card Histórico */
+        .history-list {
+            list-style: none;
+            width: 100%;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255, 0.3);
+        }
+        .history-item:last-child {
+            border-bottom: none;
+        }
+
+        .history-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .history-title { font-weight: 600; font-size: 0.95rem; }
+        .history-date { font-size: 0.75rem; opacity: 0.85; margin-top: 2px; }
+
+        .btn-rebook {
+            background-color: transparent;
+            border: 1px solid #FFF;
+            color: #FFF;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+        .btn-rebook:hover {
+            background-color: #FFF;
+            color: #7C3AED;
+        }
+
+
+        /* Utilitario para mobile */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                height: auto;
+                overflow: auto;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                padding: 1rem;
+            }
+            .nav-menu {
+                display: none; /* Simplificação para mobile */
+            }
+            .main-content {
+                padding: 1rem;
+            }
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            .promo-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .banner-content {
+                padding-left: 0;
+                margin-bottom: 1rem;
+            }
+        }
 
 /* --- RESPONSIVE --- */
 @media (min-width: 1024px) {

@@ -22,7 +22,7 @@
                 </header>
 
                 <h2 class="page-title">CADASTRAR</h2>
-                <form action="#" method="POST" style="width: 100%;">
+                <form action="./views/pages/home.php" method="POST" style="width: 100%;">
 
                     <section class="form-group">
                         <label for="email" class="form-label">Email</label>
@@ -32,7 +32,7 @@
                                 <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                             </svg>
-                            <input type="email" id="email" class="form-input" placeholder="Insira seu Email:" required>
+                            <input type="email" id="email" class="form-input" placeholder="Insira seu Email:" >
                         </section>
                     </section>
 
@@ -44,7 +44,7 @@
                                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                                 <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                             </svg>
-                            <input type="password" id="password" class="form-input" placeholder="Insira sua Senha:" required>
+                            <input type="password" id="password" class="form-input" placeholder="Insira sua Senha:" >
                         </section>
                     </section>
 

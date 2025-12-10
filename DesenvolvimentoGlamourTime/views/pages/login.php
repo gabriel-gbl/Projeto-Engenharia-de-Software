@@ -17,7 +17,6 @@
         <section class="form-section">
             <section class="form-wrapper">
 
-                <!-- Logo -->
                 <header class="logo-container">
                     <img src="../image/logo-pink.png" alt="" class="logo">
                 </header>
