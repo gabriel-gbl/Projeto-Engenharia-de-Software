@@ -45,7 +45,6 @@
     margin: 1.5rem 0;
 }
 
-/* Menu */
 .sidebar-nav {
     flex: 1;
     display: flex;
@@ -76,11 +75,6 @@
 
 .nav-link:hover {
     background-color: rgba(255,255,255, 0.1);
-}
-
-.nav-link.active {
-    background-color: rgba(0,0,0, 0.2);
-    color: #FFF;
 }
 
 .nav-icon {
