@@ -316,7 +316,7 @@ body {
 .illustration-img {
     position: absolute;
     max-width: 450px;
-    top:-120px;
+    top:-220px;
     height: auto;
     object-fit: contain;
 }

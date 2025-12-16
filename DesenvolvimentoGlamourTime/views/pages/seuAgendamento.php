@@ -1,53 +1,76 @@
+<?php
+require_once "../../backend/sistema.php";
+$s = Sistema::getInstancia();
+$usuario = $s->obterUsuarioLogado();
+
+if (!$usuario) {
+    header("Location: ../login.php");
+    exit;
+}
+
+// PEGAR APENAS O AGENDAMENTO ATIVO
+$lista = $s->listarAgendamentosCliente($usuario->id);
+
+$agendamento = null;
+foreach ($lista as $a) {
+    if ($a->status === "pendente") {
+        $agendamento = $a;
+        break;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlamourTime - Seu Agendamento</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="../css/seuAgendamento.css">
     <link rel="stylesheet" href="../css/components.css">
-    
 </head>
 <body>
-    <?php
-        include "sidebar.php"
-    ?>
-    <main class="main-content">
-        <?php
-            include "header.php"
-        ?>
-        <section class="appointment-panel">
-            
-            <section class="content-container">
-                
-                <section class="info-section">
-                    <h2 class="section-title">SEU ATENDIMENTO</h2>
-                    
-                    <section class="date-display">
-                        05/10/2025 ÁS 09:00
-                    </section>
 
-                    <button class="btn-action btn-reschedule">
-                        REMARCAR DATA/HORA
-                    </button>
-                    
-                    <button class="btn-action btn-cancel">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                        DESMARCAR DATA/HORA
-                    </button>
+<?php include "sidebar.php"; ?>
+
+<main class="main-content">
+
+<?php include "header.php"; ?>
+
+<section class="appointment-panel">
+    <section class="content-container">
+
+        <section class="info-section">
+            <h2 class="section-title">SEU ATENDIMENTO</h2>
+
+            <?php if (!$agendamento): ?>
+
+                <p class="no-appointment">Você não possui agendamentos no momento.</p>
+
+            <?php else: ?>
+
+                <section class="date-display">
+                    <?= date("d/m/Y", strtotime($agendamento->data)) ?>
+                    às <?= $agendamento->hora ?>
                 </section>
 
-                <section class="illustration-section">
-                    <img src="../image/pessoa-atendimento.png" alt="Ilustração de uma mulher com maquiagem segurando um quadro de informações sobre agendamento." class="illustration-img">
-                </section>
+                <a href="agendarHorario.php?remarcar=<?= $agendamento->id ?>">
+                    <button class="btn-action btn-reschedule">REMARCAR DATA/HORA</button>
+                </a>
 
-            </section>
+                <a href="../../backend/cancelar.php?id=<?= $agendamento->id ?>"
+                   onclick="return confirm('Deseja realmente cancelar seu atendimento?');">
+                    <button class="btn-action btn-cancel">DESMARCAR DATA/HORA</button>
+                </a>
 
+            <?php endif; ?>
         </section>
 
-    </main>
+        <section class="illustration-section">
+            <img src="../image/pessoa-atendimento.png" class="illustration-img">
+        </section>
 
+    </section>
+</section>
+
+</main>
 </body>
 </html>

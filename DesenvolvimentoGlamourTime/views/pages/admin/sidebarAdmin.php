@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../../css/components.css">
 <aside class="sidebar">
     <nav class="sidebar-nav">
         <header class="brand">
@@ -22,31 +23,21 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="agendarHorario.php" class="nav-link">
-                    AGENDAR HORÁRIO
+                <a href="../admin/gerenciarAtendimentos.php" class="nav-link">
+                    GERENCIAR ATENDIMENTO
                 </a>
             </li>
             <li class="nav-item">
-                <a href="consultarHorario.php" class="nav-link">
-                    CONSULTAR HORÁRIOS
+                <a href="cadastrarHorário.php" class="nav-link">
+                    CADASTRAR HORÁRIOS DISPONIVEIS
                 </a>
-            </li>
-            <li class="nav-item">
-                <a href="seuAgendamento.php" class="nav-link">
-                    SEU AGENDAMENTO(OS)
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="perfil.php" class="nav-link">
-                    PERFIL
-                </a>
-            </li>
+            </li>   
         </ul>
     </nav>
 
     <div class="divider"></div>
 
-    <a href="../../backend/logout.php" style="text-decoration:none">
+    <a href="../../../backend/logout.php" style="text-decoration:none">
         <button class="logout-btn" type="button">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
